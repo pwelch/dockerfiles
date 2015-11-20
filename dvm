@@ -1,14 +1,12 @@
-#!/usr/bin/env perl
+#!/bin/sh
 
-# Pulls down Docker Images from Docker Hub
-@images = <DATA>;
+images=(
+  'ubuntu' \
+  'ruby'   \
+  'kalilinux/kali-linux-docker'
+)
 
-foreach $image (@images) {
-  print("*** Pulling Docker Image: $image");
-  system("/usr/local/bin/docker pull $image");
-}
-
-__END__
-ruby
-ubuntu
-kalilinux/kali-linux-docker
+for image in "${images[@]}"; do
+  echo "*** Pulling Docker Image: $image"
+  /usr/local/bin/docker pull $image
+done
