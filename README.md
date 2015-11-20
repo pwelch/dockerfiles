@@ -4,6 +4,7 @@ Repo for Dockerfiles
 
 ## Usage
 
-Installing or pulling latest Docker images from Docker Hub:
+Install or pull latest Docker images from Docker Hub:
 
 `./dvm`
+

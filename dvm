@@ -1,7 +1,6 @@
 #!/usr/bin/env perl
 
 # Pulls down Docker Images from Docker Hub
-
 @images = <DATA>;
 
 foreach $image (@images) {
