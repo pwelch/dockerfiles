@@ -18,8 +18,7 @@ RUN cd /tmp \
 
 # Clean up image
 RUN rm -rf /tmp/* \
-  && apt-get remove --yes build-essential \
-  && apt-get remove --yes wget \
+  && apt-get remove --yes build-essential wget \
   && apt-get autoremove --yes \
   && apt-get clean all \
   && rm -rf /var/lib/apt/lists/*

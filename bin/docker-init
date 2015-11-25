@@ -1,0 +1,5 @@
+echo 'Starting docker-machine dev'
+docker-machine start dev
+
+echo 'Running docker-machine env dev'
+eval "$(docker-machine env dev)"

@@ -12,5 +12,7 @@ RUN locale-gen en_US.UTF-8
 
 # Clean up image
 RUN rm -rf /tmp/* \
+  && apt-get remove --yes curl \
+  && apt-get autoremove --yes \
   && apt-get clean all \
-  && rm -rf /var/lib/apt/lists/* \
+  && rm -rf /var/lib/apt/lists/*

@@ -1,0 +1,7 @@
+# Clean up after Docker
+
+echo 'Removing stopped docker containers'
+docker rm $(docker ps -a -q) 2> /dev/null
+
+echo 'Removing untagged docker images'
+docker images | grep "<none>" | awk '{ print $3 }' | xargs docker rmi
