@@ -7,7 +7,7 @@ RUN apt-get update \
   && apt-get install curl --yes
 
 # Install ChefDK
-RUN curl -L https://www.opscode.com/chef/install.sh | bash -s -- -P chefdk
+RUN curl -L https://www.opscode.com/chef/install.sh | bash -s -- -P chefdk -v 0.10.0
 RUN locale-gen en_US.UTF-8
 
 # Clean up image
