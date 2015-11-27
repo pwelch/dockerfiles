@@ -6,7 +6,7 @@ VERSION = 0.1.0
 all: build
 
 build:
-	# docker run -p 80:80 -d asciiflow2:0.1.0
+	# docker run -p 80:8080 -d asciiflow2:0.1.0
 	docker build -t $(NAME):$(VERSION) --rm --file Dockerfile .
 
 tag_latest:
