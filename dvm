@@ -1,6 +1,7 @@
 #!/bin/sh
 
 images=(
+  'alpine' \
   'ubuntu' \
   'ruby'   \
   'debian' \
