@@ -6,5 +6,5 @@ Repo for Dockerfiles
 
 Install or pull latest Docker images from Docker Hub:
 
-`./dvm`
+`./dim`
 

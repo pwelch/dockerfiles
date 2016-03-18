@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Images to pull
+readonly IMAGES=(
+  'alpine'   \
+  'centos'   \
+  'redis'    \
+  'ruby'     \
+  'debian'   \
+  'kalilinux/kali-linux-docker' \
+  # 'mysql'    \
+   'postgres' \
+  # 'ubuntu'   \
+  # 'rabbitmq' \
+  # 'jenkins'
+)
+
+readonly PROGNAME=$(basename $0)
+
+pull_images() {
+  local image
+  for image in "${IMAGES[@]}"; do
+    echo "*** Pulling Docker Image: $image"
+    /usr/local/bin/docker pull $image
+  done
+}
+
+# Help
+usage() {
+  cat <<-EOF
+  usage: $PROGNAME
+
+  Install or pull latest Docker images from Docker Hub
+EOF
+  exit 0
+}
+
+# Main
+main() {
+  if [[ "$@" == "-h" || "$@" == "--help" ]]; then usage; fi
+
+  pull_images
+}
+
+main $@
