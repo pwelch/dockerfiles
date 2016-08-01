@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    build: .
+    volumes:
+      - ".:/src/my_api"
+    working_dir: "/src/my_api"
+    command: "bundle exec rackup --host 0.0.0.0"
+    ports:
+      - "9292:9292"
+    depends_on:
+      - db
+    links:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - "./tmp/db:/var/lib/postgresql/data"
+
+# Docker-Compose will allow containers to connect by referencing their service name
+# The web container can ping the db container as 'db' (ping db)
