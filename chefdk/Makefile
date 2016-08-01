@@ -6,7 +6,7 @@ VERSION = 0.16.28
 all: build
 
 build:
-	docker build -t $(NAME):$(VERSION) --rm --file Dockerfile .
+	docker build -t $(NAME):$(VERSION) --build-arg chefdk_version=$(VERSION) --rm --file Dockerfile .
 
 tag_latest:
 	docker tag -f $(NAME):$(VERSION) $(NAME):latest
