@@ -14,3 +14,6 @@ tag_latest:
 remove:
 	docker rmi $(NAME):$(VERSION) && \
 		docker rmi $(NAME):latest
+
+test:
+	docker run --rm -v `pwd`:/tmp/ -w /tmp/ -u root yara:$(VERSION) /bin/sh -c './test.sh'
