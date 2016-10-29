@@ -1,16 +1,17 @@
 NAME    = chefdk
-VERSION = 0.16.28
+VERSION = 0.19.6
 
-.PHONY: all build tag_latest remove
+.PHONY: all help build tag_latest remove
 
-all: build
+help:       ## Show this help
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
-build:
+build:      ## build new ChefDK Docker image
 	docker build -t $(NAME):$(VERSION) --build-arg chefdk_version=$(VERSION) --rm --file Dockerfile .
 
-tag_latest:
+tag_latest: ## tag latest ChefDK Docker image
 	docker tag -f $(NAME):$(VERSION) $(NAME):latest
 
-remove:
+remove:     ## remove Docker image
 	docker rmi $(NAME):$(VERSION) && \
 		docker rmi $(NAME):latest
