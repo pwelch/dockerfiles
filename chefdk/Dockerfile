@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER pwelch "git@pwelch.net"
 
 # Set ChefDK Version
-ARG chefdk_version=0.19.6
+ARG chefdk_version=1.1.16
 
 # Update apt-get and install packages
 RUN apt-get update \
