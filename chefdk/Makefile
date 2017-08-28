@@ -1,5 +1,5 @@
 NAME    = chefdk
-VERSION = 1.1.16
+VERSION = 2.1.11
 
 .PHONY: all help build tag_latest remove
 

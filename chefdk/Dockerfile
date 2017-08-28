@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER pwelch "git@pwelch.net"
 
 # Set ChefDK Version
-ARG chefdk_version=1.1.16
+ARG chefdk_version=2.1.11
 
 # Update apt-get and install packages
 RUN apt-get update \
@@ -22,5 +22,5 @@ RUN  mkdir -p ~/.ssh && \
 RUN rm -rf /tmp/* \
   && apt-get remove --yes curl \
   && apt-get autoremove --yes \
-  && apt-get clean all \
+  && apt-get clean all
   # && rm -rf /var/lib/apt/lists/*
